@@ -1,0 +1,7 @@
+{
+  "@@locale": "en",
+  "appName": "One",
+  "@appName": {
+    "description": "Name of the app"
+  }
+}
