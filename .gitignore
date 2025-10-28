@@ -33,6 +33,19 @@ migrate_working_dir/
 /build/
 /coverage/
 
+# Android related
+**/android/**/gradle-wrapper.jar
+**/android/.gradle
+**/android/captures/
+**/android/local.properties
+**/android/**/GeneratedPluginRegistrant.java
+**/android/key.properties
+**/android/.idea/
+**/android/app/debug
+**/android/app/profile
+**/android/app/release
+*.jks
+
 # Symbolication related
 app.*.symbols
 
