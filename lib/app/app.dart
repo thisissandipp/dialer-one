@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:one/contacts/contacts.dart';
 import 'package:one/l10n/l10n.dart';
 
 class App extends StatelessWidget {
@@ -6,15 +7,11 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('One'),
-        ),
-      ),
+      home: ContactsPage()
     );
   }
 }

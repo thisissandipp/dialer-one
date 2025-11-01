@@ -9,6 +9,19 @@ analyzer:
     strict-casts: true
     strict-inference: true
 
+  errors:
+    invalid_annotation_target: ignore # freezed and json_serializable combination
+    close_sinks: ignore
+    missing_required_param: error
+    missing_return: error
+    collection_methods_unrelated_type: warning
+    unrelated_type_equality_checks: warning
+
+  exclude:
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
+    - lib/l10n/gen/*
+
 linter:
   rules:
     avoid_relative_lib_imports: true
