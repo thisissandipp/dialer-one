@@ -7,7 +7,10 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'contacts_native_datasource.g.dart';
 
 class ContactsNativeDataSource implements ContactsDataSource {
-  static const MethodChannel _channel = MethodChannel(AppChannel.name);
+  const ContactsNativeDataSource({MethodChannel? channel})
+    : _channel = channel ?? const MethodChannel(AppChannel.name);
+
+  final MethodChannel _channel;
 
   @override
   Future<List<JsonMap>> getContacts() async {
@@ -20,5 +23,5 @@ class ContactsNativeDataSource implements ContactsDataSource {
 
 @riverpod
 ContactsDataSource contactsNativeDataSource(Ref ref) {
-  return ContactsNativeDataSource();
+  return const ContactsNativeDataSource();
 }
