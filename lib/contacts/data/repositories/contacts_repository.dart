@@ -52,12 +52,9 @@ class ContactsRepository {
         );
       }
       final rawContacts = await _dataSource.getContacts();
-      print('rawContacts: ${rawContacts.runtimeType}');
       final contacts = rawContacts.map(Contact.fromJson).toList();
-      print('contacts: $contacts');
       return Response.ok(contacts);
     } catch (e) {
-      print('ERROR: $e');
       return Response.error(GetContactsException(e));
     }
   }

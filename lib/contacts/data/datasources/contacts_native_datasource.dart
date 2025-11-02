@@ -14,8 +14,7 @@ class ContactsNativeDataSource implements ContactsDataSource {
     const method = AppChannel.getContacts;
     final result = await _channel.invokeMethod<List<dynamic>>(method);
     if (result == null) return [];
-    // return result.whereType<Map>().map((e) => Map<String, dynamic>.from(e)).toList();
-    return result.map((e) => JsonMap.from(e as Map)).toList();
+    return result.whereType<Map>().map((e) => JsonMap.from(e)).toList();
   }
 }
 
