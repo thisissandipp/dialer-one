@@ -39,10 +39,6 @@ class ContactsPage extends ConsumerWidget {
         ),
         loading: () => const Center(child: CircularProgressIndicator()),
       ),
-      floatingActionButton: IconButton(
-        icon: const Icon(Icons.refresh),
-        onPressed: () => ref.invalidate(contactsProvider),
-      ),
     );
   }
 }
