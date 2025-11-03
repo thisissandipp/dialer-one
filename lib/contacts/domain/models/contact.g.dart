@@ -7,7 +7,7 @@ part of 'contact.dart';
 // **************************************************************************
 
 _Contact _$ContactFromJson(Map<String, dynamic> json) => _Contact(
-  id: json['id'] as String? ?? '',
+  id: (json['id'] as num?)?.toInt() ?? 0,
   displayName: json['displayName'] as String? ?? '',
   displayPhoto: const Uint8ListConverter().fromJson(
     json['displayPhoto'] as List<int>?,

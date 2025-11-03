@@ -55,4 +55,4 @@ final class ContactsNativeDataSourceProvider
 }
 
 String _$contactsNativeDataSourceHash() =>
-    r'f9148c9a1f9cf9e9784a1799347a452b127a7641';
+    r'245bbcc3758648508cb7dc253e9279eda12c47d1';

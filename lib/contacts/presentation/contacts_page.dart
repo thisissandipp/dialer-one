@@ -23,7 +23,7 @@ class ContactsPage extends ConsumerWidget {
               final contact = contacts[index];
               return ListTile(
                 title: Text(contact.displayName),
-                subtitle: const Text('Placeholder'),
+                subtitle: Text('ID: ${contact.id}, Phone: ${contact.phoneNumbers}'),
               );
             },
           );

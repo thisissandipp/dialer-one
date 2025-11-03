@@ -10,7 +10,7 @@ part 'contact.g.dart';
 @freezed
 abstract class Contact with _$Contact {
   const factory Contact({
-    @Default('') String id,
+    @Default(0) int id,
     @Default('') String displayName,
     @Uint8ListConverter() Uint8List? displayPhoto,
     @SafeMapConverter() @Default(ContactName()) ContactName contactName,

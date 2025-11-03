@@ -45,7 +45,7 @@ class ContactsManager {
                     val photoUriColumnIndex = it.getColumnIndex(ContactsContract.Contacts.PHOTO_URI)
 
                     do {
-                        val contactId = it.getString(idColumnIndex)
+                        val contactId = it.getLong(idColumnIndex)
                         val displayName = it.getString(displayNameColumnIndex) ?: ""
                         val photoUri = it.getString(photoUriColumnIndex)
 
@@ -79,7 +79,7 @@ class ContactsManager {
             return dialerContactsList
         }
 
-        private fun getContactName(contentResolver: ContentResolver, contactId: String): ContactName {
+        private fun getContactName(contentResolver: ContentResolver, contactId: Long): ContactName {
             val projection = arrayOf(
                 StructuredName.GIVEN_NAME,
                 StructuredName.FAMILY_NAME,
@@ -95,7 +95,7 @@ class ContactsManager {
                 ContactsContract.Data.CONTENT_URI,
                 projection,
                 "${ContactsContract.Data.CONTACT_ID} = ? AND ${ContactsContract.Data.MIMETYPE} = ?",
-                arrayOf(contactId, StructuredName.CONTENT_ITEM_TYPE),
+                arrayOf("$contactId", StructuredName.CONTENT_ITEM_TYPE),
                 null,
             )
 
@@ -152,7 +152,7 @@ class ContactsManager {
         private fun getPhoneNumbers(
             contentResolver: ContentResolver,
             resources: Resources,
-            contactId: String,
+            contactId: Long,
             hasPhoneNumber: Int
         ): List<PhoneNumber> {
             val phoneNumbers = mutableListOf<PhoneNumber>()
@@ -170,7 +170,7 @@ class ContactsManager {
                     Phone.CONTENT_URI,
                     projection,
                     "${Phone.CONTACT_ID} = ?",
-                    arrayOf(contactId),
+                    arrayOf("$contactId"),
                     null,
                 )
 
@@ -202,7 +202,7 @@ class ContactsManager {
         private fun getContactEmails(
             contentResolver: ContentResolver,
             resources: Resources,
-            contactId: String
+            contactId: Long
         ): List<ContactEmail> {
             val contactEmails = mutableListOf<ContactEmail>()
 
@@ -217,7 +217,7 @@ class ContactsManager {
                 Email.CONTENT_URI,
                 projection,
                 "${Email.CONTACT_ID} = ?",
-                arrayOf(contactId),
+                arrayOf("$contactId"),
                 null,
             )
 
@@ -246,7 +246,7 @@ class ContactsManager {
         private fun getPostalAddresses(
             contentResolver: ContentResolver,
             resources: Resources,
-            contactId: String
+            contactId: Long
         ): List<PostalAddress> {
             val postalAddresses = mutableListOf<PostalAddress>()
 
@@ -268,7 +268,7 @@ class ContactsManager {
                 StructuredPostal.CONTENT_URI,
                 projection,
                 "${StructuredPostal.CONTACT_ID} = ?",
-                arrayOf(contactId),
+                arrayOf("$contactId"),
                 null
             )
 

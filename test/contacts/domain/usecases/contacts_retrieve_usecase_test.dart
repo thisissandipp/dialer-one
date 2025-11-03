@@ -18,7 +18,7 @@ void main() {
 
   group('ContactsRetrieveUseCase', () {
     test('returns Response.ok when repository returns success', () async {
-      final mockContacts = [Contact(id: '1', displayName: 'Alice')];
+      final mockContacts = [Contact(id: 1, displayName: 'Alice')];
       when(() => mockRepository.getContacts(any()))
           .thenAnswer((_) async => Response.ok(mockContacts));
 

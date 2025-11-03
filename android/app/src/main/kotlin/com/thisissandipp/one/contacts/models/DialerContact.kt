@@ -1,7 +1,7 @@
 package com.thisissandipp.one.contacts.models
 
 data class DialerContact(
-    val id: String,
+    val id: Long,
     val displayName: String,
     val displayPhoto: ByteArray? = null,
     val contactName: ContactName = ContactName(),

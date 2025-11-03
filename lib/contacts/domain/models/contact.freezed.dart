@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$Contact {
 
- String get id; String get displayName;@Uint8ListConverter() Uint8List? get displayPhoto;@SafeMapConverter() ContactName get contactName;@SafeMapConverter() List<PhoneNumber> get phoneNumbers;@SafeMapConverter() List<ContactEmail> get contactEmails;@SafeMapConverter() List<PostalAddress> get postalAddresses;
+ int get id; String get displayName;@Uint8ListConverter() Uint8List? get displayPhoto;@SafeMapConverter() ContactName get contactName;@SafeMapConverter() List<PhoneNumber> get phoneNumbers;@SafeMapConverter() List<ContactEmail> get contactEmails;@SafeMapConverter() List<PostalAddress> get postalAddresses;
 /// Create a copy of Contact
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $ContactCopyWith<$Res>  {
   factory $ContactCopyWith(Contact value, $Res Function(Contact) _then) = _$ContactCopyWithImpl;
 @useResult
 $Res call({
- String id, String displayName,@Uint8ListConverter() Uint8List? displayPhoto,@SafeMapConverter() ContactName contactName,@SafeMapConverter() List<PhoneNumber> phoneNumbers,@SafeMapConverter() List<ContactEmail> contactEmails,@SafeMapConverter() List<PostalAddress> postalAddresses
+ int id, String displayName,@Uint8ListConverter() Uint8List? displayPhoto,@SafeMapConverter() ContactName contactName,@SafeMapConverter() List<PhoneNumber> phoneNumbers,@SafeMapConverter() List<ContactEmail> contactEmails,@SafeMapConverter() List<PostalAddress> postalAddresses
 });
 
 
@@ -68,7 +68,7 @@ class _$ContactCopyWithImpl<$Res>
 @pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? displayName = null,Object? displayPhoto = freezed,Object? contactName = null,Object? phoneNumbers = null,Object? contactEmails = null,Object? postalAddresses = null,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String,displayName: null == displayName ? _self.displayName : displayName // ignore: cast_nullable_to_non_nullable
+as int,displayName: null == displayName ? _self.displayName : displayName // ignore: cast_nullable_to_non_nullable
 as String,displayPhoto: freezed == displayPhoto ? _self.displayPhoto : displayPhoto // ignore: cast_nullable_to_non_nullable
 as Uint8List?,contactName: null == contactName ? _self.contactName : contactName // ignore: cast_nullable_to_non_nullable
 as ContactName,phoneNumbers: null == phoneNumbers ? _self.phoneNumbers : phoneNumbers // ignore: cast_nullable_to_non_nullable
@@ -168,7 +168,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String displayName, @Uint8ListConverter()  Uint8List? displayPhoto, @SafeMapConverter()  ContactName contactName, @SafeMapConverter()  List<PhoneNumber> phoneNumbers, @SafeMapConverter()  List<ContactEmail> contactEmails, @SafeMapConverter()  List<PostalAddress> postalAddresses)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int id,  String displayName, @Uint8ListConverter()  Uint8List? displayPhoto, @SafeMapConverter()  ContactName contactName, @SafeMapConverter()  List<PhoneNumber> phoneNumbers, @SafeMapConverter()  List<ContactEmail> contactEmails, @SafeMapConverter()  List<PostalAddress> postalAddresses)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Contact() when $default != null:
 return $default(_that.id,_that.displayName,_that.displayPhoto,_that.contactName,_that.phoneNumbers,_that.contactEmails,_that.postalAddresses);case _:
@@ -189,7 +189,7 @@ return $default(_that.id,_that.displayName,_that.displayPhoto,_that.contactName,
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String displayName, @Uint8ListConverter()  Uint8List? displayPhoto, @SafeMapConverter()  ContactName contactName, @SafeMapConverter()  List<PhoneNumber> phoneNumbers, @SafeMapConverter()  List<ContactEmail> contactEmails, @SafeMapConverter()  List<PostalAddress> postalAddresses)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int id,  String displayName, @Uint8ListConverter()  Uint8List? displayPhoto, @SafeMapConverter()  ContactName contactName, @SafeMapConverter()  List<PhoneNumber> phoneNumbers, @SafeMapConverter()  List<ContactEmail> contactEmails, @SafeMapConverter()  List<PostalAddress> postalAddresses)  $default,) {final _that = this;
 switch (_that) {
 case _Contact():
 return $default(_that.id,_that.displayName,_that.displayPhoto,_that.contactName,_that.phoneNumbers,_that.contactEmails,_that.postalAddresses);case _:
@@ -209,7 +209,7 @@ return $default(_that.id,_that.displayName,_that.displayPhoto,_that.contactName,
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String displayName, @Uint8ListConverter()  Uint8List? displayPhoto, @SafeMapConverter()  ContactName contactName, @SafeMapConverter()  List<PhoneNumber> phoneNumbers, @SafeMapConverter()  List<ContactEmail> contactEmails, @SafeMapConverter()  List<PostalAddress> postalAddresses)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int id,  String displayName, @Uint8ListConverter()  Uint8List? displayPhoto, @SafeMapConverter()  ContactName contactName, @SafeMapConverter()  List<PhoneNumber> phoneNumbers, @SafeMapConverter()  List<ContactEmail> contactEmails, @SafeMapConverter()  List<PostalAddress> postalAddresses)?  $default,) {final _that = this;
 switch (_that) {
 case _Contact() when $default != null:
 return $default(_that.id,_that.displayName,_that.displayPhoto,_that.contactName,_that.phoneNumbers,_that.contactEmails,_that.postalAddresses);case _:
@@ -224,10 +224,10 @@ return $default(_that.id,_that.displayName,_that.displayPhoto,_that.contactName,
 @JsonSerializable()
 
 class _Contact implements Contact {
-  const _Contact({this.id = '', this.displayName = '', @Uint8ListConverter() this.displayPhoto, @SafeMapConverter() this.contactName = const ContactName(), @SafeMapConverter() final  List<PhoneNumber> phoneNumbers = const [], @SafeMapConverter() final  List<ContactEmail> contactEmails = const [], @SafeMapConverter() final  List<PostalAddress> postalAddresses = const []}): _phoneNumbers = phoneNumbers,_contactEmails = contactEmails,_postalAddresses = postalAddresses;
+  const _Contact({this.id = 0, this.displayName = '', @Uint8ListConverter() this.displayPhoto, @SafeMapConverter() this.contactName = const ContactName(), @SafeMapConverter() final  List<PhoneNumber> phoneNumbers = const [], @SafeMapConverter() final  List<ContactEmail> contactEmails = const [], @SafeMapConverter() final  List<PostalAddress> postalAddresses = const []}): _phoneNumbers = phoneNumbers,_contactEmails = contactEmails,_postalAddresses = postalAddresses;
   factory _Contact.fromJson(Map<String, dynamic> json) => _$ContactFromJson(json);
 
-@override@JsonKey() final  String id;
+@override@JsonKey() final  int id;
 @override@JsonKey() final  String displayName;
 @override@Uint8ListConverter() final  Uint8List? displayPhoto;
 @override@JsonKey()@SafeMapConverter() final  ContactName contactName;
@@ -286,7 +286,7 @@ abstract mixin class _$ContactCopyWith<$Res> implements $ContactCopyWith<$Res> {
   factory _$ContactCopyWith(_Contact value, $Res Function(_Contact) _then) = __$ContactCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String displayName,@Uint8ListConverter() Uint8List? displayPhoto,@SafeMapConverter() ContactName contactName,@SafeMapConverter() List<PhoneNumber> phoneNumbers,@SafeMapConverter() List<ContactEmail> contactEmails,@SafeMapConverter() List<PostalAddress> postalAddresses
+ int id, String displayName,@Uint8ListConverter() Uint8List? displayPhoto,@SafeMapConverter() ContactName contactName,@SafeMapConverter() List<PhoneNumber> phoneNumbers,@SafeMapConverter() List<ContactEmail> contactEmails,@SafeMapConverter() List<PostalAddress> postalAddresses
 });
 
 
@@ -306,7 +306,7 @@ class __$ContactCopyWithImpl<$Res>
 @override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? displayName = null,Object? displayPhoto = freezed,Object? contactName = null,Object? phoneNumbers = null,Object? contactEmails = null,Object? postalAddresses = null,}) {
   return _then(_Contact(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String,displayName: null == displayName ? _self.displayName : displayName // ignore: cast_nullable_to_non_nullable
+as int,displayName: null == displayName ? _self.displayName : displayName // ignore: cast_nullable_to_non_nullable
 as String,displayPhoto: freezed == displayPhoto ? _self.displayPhoto : displayPhoto // ignore: cast_nullable_to_non_nullable
 as Uint8List?,contactName: null == contactName ? _self.contactName : contactName // ignore: cast_nullable_to_non_nullable
 as ContactName,phoneNumbers: null == phoneNumbers ? _self._phoneNumbers : phoneNumbers // ignore: cast_nullable_to_non_nullable
