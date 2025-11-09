@@ -5,6 +5,7 @@ export 'data/repositories/contacts_repository.dart';
 
 // Domain exports
 export 'domain/models/models.dart';
+export 'domain/usecases/contacts_grouped_usecase.dart';
 export 'domain/usecases/contacts_retrieve_usecase.dart';
 
 // Presentation exports
